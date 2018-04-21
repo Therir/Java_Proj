@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Tytul</th>
+        <th>Wydawca</th>
+        <th>Rok Produkcji</th>
+    </tr>
+    </thead>
+    <tr th:each = "obiekt: ${lista}">
+        <td><a href="#" th:href="@{/delete/(id=${obiekt.id})}"th:text="${obiekt.id}"></a><a></td>
+        <td th:text = "${obiekt.tytul}"></td>
+        <td th:text = "${obiekt.wydawca}"></td>
+        <td th:text = "${obiekt.rokProd}"></td>
+    </tr>
+
+</table>
+<h1><a href="#" th:href="@{/zapis}" th:text="ZAPISZ"></a></h1>
+<a href="/obiekt">Submit another message</a>
+</body>
+</html>
